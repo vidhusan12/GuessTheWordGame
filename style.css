@@ -1,5 +1,10 @@
+html,
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./resources/bg-guess-the-word.jpg');
+  height: 100%;
+}
+
+body {
+  background: #FFF2EF
 }
