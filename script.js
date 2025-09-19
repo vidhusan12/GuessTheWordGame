@@ -30,6 +30,7 @@ function generateRandomWord() {
 
   // Optionally, store the original word for checking guesses
   currentWord = word;
+  createInputFields(currentWord.length)
 }
 
 function createInputFields(length) {
@@ -37,7 +38,7 @@ function createInputFields(length) {
   const inputBox = document.querySelector('.input-box');
   inputBox.innerHTML = ''; // clear previous inputs
 
-  for(let i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     const input = document.createElement('input');
     input.type = 'text';
     input.maxLength = 1;
@@ -49,10 +50,36 @@ function createInputFields(length) {
 
 function handleInput(event) {
   // Handle input change event
+  const inputs = document.querySelectorAll('.guess-input')
+  let guess = '';
+
+  //Build the guess string
+  for (let i = 0; i < inputs.length; i++) {
+    guess += inputs[i].value;
+  }
+
+  //Check if any input is empty
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value === '') {
+      return; // Wait until all inputs are filled
+    }
+  }
+
+  //All inputs are filled, check the guess
+  if(guess === currentWord) {
+    console.log('')
+  } else {
+    tries++
+  }
+
+
 }
 
 function resetGame() {
   // Handle game reset button
+  tries = 0
+  mistakes = ''
+  generateRandomWord()
 }
 
 document
