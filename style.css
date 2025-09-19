@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #fff2ef;
+  background: #FFE797;
   color: white;
   flex-direction: column;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 .outer-box {
-  background: #f7a5a5;
+  background: #84994F;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@ body {
   height: 600px;
   padding: 2rem 2.5rem;
   border-radius: 16px;
-  border: 2px solid;
+  border: 1px solid;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 

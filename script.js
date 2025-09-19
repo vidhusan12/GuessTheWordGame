@@ -7,10 +7,29 @@ let mistakes = 0;
 
 function scrambleWord(word) {
   // Scramble and return the scrambled word
+  let arr = word.split('');
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+  return arr.join('')
+
 }
+
 
 function generateRandomWord() {
   // Generate and display scrambled word
+  let randomIndex = Math.floor(Math.random() * words.length);
+  let word = words[randomIndex];
+
+  //Scramble the word
+  let scrambled = scrambleWord(word);
+
+  // Display the scrambled word in the .word-box element
+  document.querySelector('.word-box').textContent = scrambled;
+
+  // Optionally, store the original word for checking guesses
+  currentWord = word;
 }
 
 function createInputFields(length) {
