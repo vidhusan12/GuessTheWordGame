@@ -34,6 +34,17 @@ function generateRandomWord() {
 
 function createInputFields(length) {
   // Create number of input fields according to the number of letters
+  const inputBox = document.querySelector('.input-box');
+  inputBox.innerHTML = ''; // clear previous inputs
+
+  for(let i = 0; i < length; i++) {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.maxLength = 1;
+    input.className = 'guess-input';
+    input.addEventListener('input', handleInput);
+    inputBox.appendChild(input);
+  }
 }
 
 function handleInput(event) {
